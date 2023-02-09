@@ -1,0 +1,136 @@
+body{
+    background: rgb(21,3,96);
+    background: linear-gradient(183deg, rgba(21,3,96,1) 16%, rgba(40,118,172,1) 55%, rgba(0,151,255,1) 86%);
+
+    
+    .navegacion{
+        a{
+            color: rgb(220, 220, 220);
+            font-size: 1.2em;
+            &:hover{
+                color: rgb(252, 229, 229);
+            }
+        }
+    }
+    .titulo-logo{
+        color: rgb(220, 220, 220);
+        font-size: 1.5em;
+        &:hover{
+            color: rgb(220, 220, 220);
+
+        }
+
+    }
+    .titulo-principal{
+        h1{
+            font-size: 3em;
+            color: rgb(210, 36, 137);
+        }
+    }
+    .titulo-offcanvas{
+        font-size: 1.5em;
+        text-decoration:underline;
+        color: rgb(210, 36, 137);
+        font-weight: 600;
+        padding: 5px;
+    }
+
+    .titulo-buscador{
+        color: #ffff;
+        align-self: center;
+        margin-right: 20px;
+    }
+
+    .contenedor-buscador{
+        display: flex;
+        justify-content:center;
+    }
+    
+    .carrito{
+        right: 0;
+        top: 0;
+        .boton-carrito{
+            margin-top: 8px;
+            margin-right: 20px;
+        }
+    }
+    .card{
+        height: 500px;
+        width: 18rem;
+        
+
+        .imagenes{
+            img{
+                height: 250px;
+        
+            }
+        }
+        .price{
+            font-size: 1.5em;
+            border-radius: 20%;
+            margin: 20px;
+            p{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+
+        }
+        .card-title{
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            height: 80px;
+        }
+        .boton{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 20px;
+        }
+    }
+
+    .boton-offcanvas{
+        font-size: 1.2em ;
+        margin: 20px;
+        background-color: rgb(210, 36, 137);
+
+        &:hover{
+            background: rgb(21,3,96);
+
+        }
+    }
+    .boton-agregar-carrito{
+        font-size: 1.2em ;
+        background-color: rgb(210, 36, 137);
+
+        &:hover{
+            background: rgb(21,3,96);
+
+        }
+    }
+    .total{
+        font-size: 1.3em;
+
+    }
+    .datos-carrito{
+        font-size: 1em;
+        margin-bottom: 20px;
+        div{
+            align-self: center;
+            button{
+                border: none;
+                background-color: white;
+                font-size: 1.3em;
+            }
+        }
+
+    }
+    .agregar-producto{
+        color: green;
+    }
+    .eliminar-producto{
+        color: red;
+    }
+}

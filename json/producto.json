@@ -1,0 +1,15 @@
+[
+    {"id":1,"cantidad":1,"nombre":"Teclado LOGITECH-G413","precio": 12000,"url": "../img/TECLADO/LOGITECH-G413.jpg"},
+    {"id":2,"cantidad":1,"nombre":"Mouse Storm-Elite","precio":8600,"url":"../img/MOUSE/redragon-storm.jpg"},
+    {"id":3,"cantidad":1,"nombre":"Gabinete Gamer MT-235GM","precio": 9500,"url":"../img/GABINETE/GabineteMT-235GM1.jpg"},
+    {"id":4,"cantidad":1,"nombre":"Memoria Ram 32GB 3200Mhz","precio":15000,"url":"../img/RAM/memoriaRam1.png"},
+    {"id":5,"cantidad":1,"nombre":"Disco Duro 1TB","precio":10000,"url":"../img/DISCODURO/discoDuro.jpg"},
+    {"id":6,"cantidad":1,"nombre":"Disco Solido Kingston 1TB","precio":7860,"url":"../img/DISCOSOLIDO/discoSolido.jpg"},
+    {"id":7,"cantidad":1,"nombre":"Auricular Logitech","precio":20000,"url":"../img/AURICULAR/LOGITECH.png"},
+    {"id":8,"cantidad":1,"nombre":"Monitor Samsung 22'","precio":45000,"url":"../img/MONITOR/SAMSUNG22.jpg"},
+    {"id":10,"cantidad":1,"nombre":"Soporte Auricular","precio":5000,"url":"../img/AURICULAR/soporteAuris.jpg"},
+    {"id":11,"cantidad":1,"nombre":"Cable HDMI","precio":900,"url":"../img/GABINETE/cablehdmi.jpg"},
+    {"id":12,"cantidad":1,"nombre":"Parlante Noblex","precio":30000,"url":"../img/PARLANTE/parlante.jpg"},
+    {"id":13,"cantidad":1,"nombre":"Joystick PS5","precio":430500,"url":"../img/OTROS/joystickps5.jpg"}
+
+]
