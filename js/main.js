@@ -44,7 +44,12 @@ const contenedorProductos = document.getElementById("contenedor-productos");
 const listadoProductos = "../json/producto.json";
 
 fetch(listadoProductos)
-    .then(respuesta => respuesta.json())
+    .then(respuesta => {
+        if (!respuesta.ok) {
+            throw new Error(`HTTP error! status: ${respuesta.status}`);
+        }
+        return respuesta.json();
+    })
     .then(datos => {
         arrayProductos = datos;
         arrayProductos.forEach(({ id, url, nombre, precio }) => {
@@ -73,7 +78,7 @@ fetch(listadoProductos)
             document.getElementById(`boton-card${id}`).addEventListener("click", () => agregarAlCarrito(id));
         });
     })
-    .catch(console.error);
+    .catch(error => console.error("Error al cargar los productos:", error));
 
 //FUNCION PARA CARGAR EL CARRITO
 const agregarAlCarrito = (id) =>{
