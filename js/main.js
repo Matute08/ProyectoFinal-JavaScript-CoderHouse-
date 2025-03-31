@@ -1,32 +1,3 @@
-//LOGIN
-// window.addEventListener('load', ()=>{
-//     Swal.fire({
-//         title: 'INICIAR SESION',
-//         html: `<input type="text" id="login" class="swal2-input" placeholder="Username">
-//                 <input type="password" id="password" class="swal2-input" placeholder="Password">`,
-//         confirmButtonText: 'Inciar sesion',
-//         focusConfirm: false,
-//         backdrop:'#7e0037',
-//         allowOutsideClick: false,
-//         preConfirm: () => {
-//             const login = Swal.getPopup().querySelector('#login').value
-//             const password = Swal.getPopup().querySelector('#password').value
-            
-//           if (!login || !password) {
-//             Swal.showValidationMessage(`Por favor complete los campos`)
-//           }
-//         }
-//     }).then((resultado)=>{
-//         if (resultado.isConfirmed){
-//             Swal.fire({
-//                 title: 'Bienvenido!!',
-//                 icon: 'success',
-//                 confirmButtonText: 'Aceptar',
-//                 backdrop:'#7e0037',
-//             })
-//         }
-//     })
-// })
 //ARREGLO DE PRODUCTOS
 let arrayProductos=[];
 
