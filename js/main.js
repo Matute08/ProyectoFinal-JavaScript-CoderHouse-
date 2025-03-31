@@ -1,32 +1,32 @@
 //LOGIN
-window.addEventListener('load', ()=>{
-    Swal.fire({
-        title: 'INICIAR SESION',
-        html: `<input type="text" id="login" class="swal2-input" placeholder="Username">
-                <input type="password" id="password" class="swal2-input" placeholder="Password">`,
-        confirmButtonText: 'Inciar sesion',
-        focusConfirm: false,
-        backdrop:'#7e0037',
-        allowOutsideClick: false,
-        preConfirm: () => {
-            const login = Swal.getPopup().querySelector('#login').value
-            const password = Swal.getPopup().querySelector('#password').value
+// window.addEventListener('load', ()=>{
+//     Swal.fire({
+//         title: 'INICIAR SESION',
+//         html: `<input type="text" id="login" class="swal2-input" placeholder="Username">
+//                 <input type="password" id="password" class="swal2-input" placeholder="Password">`,
+//         confirmButtonText: 'Inciar sesion',
+//         focusConfirm: false,
+//         backdrop:'#7e0037',
+//         allowOutsideClick: false,
+//         preConfirm: () => {
+//             const login = Swal.getPopup().querySelector('#login').value
+//             const password = Swal.getPopup().querySelector('#password').value
             
-          if (!login || !password) {
-            Swal.showValidationMessage(`Por favor complete los campos`)
-          }
-        }
-    }).then((resultado)=>{
-        if (resultado.isConfirmed){
-            Swal.fire({
-                title: 'Bienvenido!!',
-                icon: 'success',
-                confirmButtonText: 'Aceptar',
-                backdrop:'#7e0037',
-            })
-        }
-    })
-})
+//           if (!login || !password) {
+//             Swal.showValidationMessage(`Por favor complete los campos`)
+//           }
+//         }
+//     }).then((resultado)=>{
+//         if (resultado.isConfirmed){
+//             Swal.fire({
+//                 title: 'Bienvenido!!',
+//                 icon: 'success',
+//                 confirmButtonText: 'Aceptar',
+//                 backdrop:'#7e0037',
+//             })
+//         }
+//     })
+// })
 //ARREGLO DE PRODUCTOS
 let arrayProductos=[];
 
@@ -46,39 +46,34 @@ const listadoProductos = "../json/producto.json";
 fetch(listadoProductos)
     .then(respuesta => respuesta.json())
     .then(datos => {
-        datos.forEach(producto => {
-            arrayProductos.push(producto);
+        arrayProductos = datos;
+        arrayProductos.forEach(({ id, url, nombre, precio }) => {
             const div = document.createElement("div");
-            div.className="card col";
+            div.className = "card col d-flex justify-content-center align-items-center";
             div.innerHTML = `
-            <div id="carouselExampleFade" class="carousel slide carousel-fade">
-                <div class="carousel-inner imagenes">
-                    <div class="carousel-item active">
-                        <img src="${producto.url}" class="d-block w-100" alt="${producto.nombre}">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="carousel-inner imagenes">
+                        <div class="carousel-item active">
+                            <img src="${url}" class="d-block w-100" alt="${nombre}">
+                        </div>
                     </div>
                 </div>
-            </div>
-        
-            <div class="card-body">
-                <h5 class="card-title" id="titulo-card">${producto.nombre}</h5>
-                <div class="price">
-                    <p class="precio-card"> $${producto.precio}</p>
+                <div class="card-body">
+                    <h5 class="card-title text-center" id="titulo-card">${nombre}</h5>
+                    <div class="price text-center">
+                        <p class="precio-card"> $${precio}</p>
+                    </div>
+                    <div class="boton text-center">
+                        <a href="#" class="btn btn-primary boton-agregar-carrito" id="boton-card${id}">Agregar al Carrito</a>
+                    </div>
                 </div>
-                <div class="boton">
-                    <a href="#" class="btn btn-primary boton-agregar-carrito" id="boton-card${producto.id}">Agregar al Carrito</a>
-                </div>
-            </div>
-            `
+            `;
             contenedorProductos.appendChild(div);
 
-             //AGREGAR PRODUCTOS AL CARRITO
-            const boton = document.getElementById(`boton-card${producto.id}`);
-            boton.addEventListener("click", ()=>{
-                agregarAlCarrito(producto.id);
-            })
-        })
+            document.getElementById(`boton-card${id}`).addEventListener("click", () => agregarAlCarrito(id));
+        });
     })
-    .catch(error => console.log(error))
+    .catch(console.error);
 
 //FUNCION PARA CARGAR EL CARRITO
 const agregarAlCarrito = (id) =>{
